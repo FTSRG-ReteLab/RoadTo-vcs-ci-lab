@@ -7,12 +7,12 @@ public class TrainControllerImpl implements TrainController {
 	private int step = 0;
 	private int referenceSpeed = 0;
 	private int speedLimit = 0;
-	private int accelerateLimit = 40;
+	private int accelerateLimit = 15;
 
 
 	@Override
 	public void followSpeed() {
-		if ((referenceSpeed+step) == 0) {
+		if ((referenceSpeed+step) < 0) {
 			referenceSpeed = 0;
 		} else {
 			referenceSpeed += step;

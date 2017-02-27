@@ -7,7 +7,7 @@ public class TrainControllerImpl implements TrainController {
 	private int step = 0;
 	private int referenceSpeed = 0;
 	private int speedLimit = 0;
-	private int accelerateLimit = 20;
+	private int accelerateLimitation = 20;
 
 	@Override
 	public void followSpeed() {
@@ -22,7 +22,7 @@ public class TrainControllerImpl implements TrainController {
 
 	@Override
 	public int getAccLimit() {
-		return accelerateLimit;
+		return accelerateLimitation;
 	}	
 	@Override
 	public int getReferenceSpeed() {

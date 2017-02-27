@@ -2,6 +2,7 @@ package hu.bme.mit.train.controller;
 
 import hu.bme.mit.train.interfaces.TrainController;
 import com.google.common.collect.Table;
+import com.google.common.collect.HashBasedTable;
 
 public class TrainControllerImpl implements TrainController {
 
@@ -9,7 +10,7 @@ public class TrainControllerImpl implements TrainController {
 	private int referenceSpeed = 0;
 	private int speedLimit = 0;
 	private int accelerateLimit = 15;
-	Table<Integer, Integer, Long> tahograph;
+	public Table<Integer, Integer, Long> tahograph = HashBasedTable.create();
 
 	@Override
 	public void followSpeed() {
@@ -23,6 +24,12 @@ public class TrainControllerImpl implements TrainController {
 		enforceSpeedLimit();
 	}
 
+	@Override
+	public boolean getTable() {
+	
+		return tahograph.isEmpty();
+	}
+	
 	@Override
 	public int getAccLimit() {
 		return accelerateLimit;
